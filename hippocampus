@@ -1,0 +1,28 @@
+##reading csv file and changing column name in R studio
+
+a <- read.csv("Results.csv")
+colnames(a)[1]<- "photo_number"
+
+##adding "right/left-side" column
+
+a["side"] <- NA
+
+number_photos <- length(a$photo_number) 
+
+##defining side for each photo
+is.even <- function(x) x%%2 == 0 
+
+##this for cycle doesn't work properly
+for(i in 1:number_photos) {
+  
+
+    if(even(a[1]) == FALSE) {
+     a$side <- "left" 
+    
+    } else {
+      
+    a$side <-  "right"
+    
+    }
+
+}
